@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>mini_calculator</title>
+</head>
+<body>
+    <script>
+        let choice=0, num1=0, num2=0; //사칙연산 선택변수, 첫번째숫자,두번째숫자 변수 선언 및 초기화
+        while(1)
+        {//제대로 선택할때까지 반복
+            choice = prompt("1.덧셈 2.뺄셈 3. 곱셈 4.나눗셈 숫자를 입력 해주세요.");
+            if(isNaN(parseInt(choice)))
+            {
+                console.log("잘못입력했습니다, 다시 입력해주세요.");
+            }else if(choice<0 || choice>4)
+            {
+                console.log("사칙연산중에 골라주세요.");
+            }
+            else{break;}
+        }
+        console.log(choice+'번');
+        
+        while(1)
+        {
+            num1 = prompt("원하시는 첫번 째 수 를 입력 해주세요.");
+            if(isNaN(parseInt(num1)))
+            {
+                console.log("첫번 째 수의 받은 값이 숫자가 아닙니다. 다시 입력해주세요");
+            }else{break;}
+        }
+        while(1)
+        {
+            num2 = prompt("원하시는 두번 째 수 를 입력 해주세요.");
+            if(isNaN(parseInt(num2)))
+            {
+                console.log("숫자가 아닙니다. 다시 입력해주세요");
+            }else{break;}
+        }
+        
+        /*
+        while(1)
+        {
+            num1 = prompt("원하시는 첫번 째 수 를 입력 해주세요.");
+            num2 = prompt("원하시는 두번 째 수 를 입력 해주세요.");
+            if(isNaN(parseInt(num1)) || isNaN(parseInt(num2)))
+            {
+                console.log("숫자가 아닙니다. 다시 입력해주세요");
+            }else{break;}
+        }
+        */
+        
+        console.log("첫번째 값 = "+num1);
+        console.log("두번째 값 = "+num2);
+
+        choice = parseInt(choice);
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+
+        switch(choice)
+        {
+            case 1: console.log(`${num1} + ${num2} = ${num1 + num2}`);
+                break;
+            case 2: console.log(`${num1} - ${num2} = ${num1 - num2}`);
+                break;
+            case 3: console.log(`${num1} * ${num2} = ${num1 * num2}`);
+                break;
+            case 4: console.log(`${num1} / ${num2} = ${num1 / num2}`);
+                break;
+        }
+    </script>
+</body>

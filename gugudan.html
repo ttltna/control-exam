@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>gugudan</title>
+</head>
+<body>
+    <script>
+        let gugudan=0; //while문에서 반복선언시 안좋아서(왜 안좋은지 설명 할 것) 미리 선언 
+        while(true)
+        {//숫자를 못받을시 반복적으로 입력받기 위해 반복문 선택
+            gugudan = prompt("출력하실 구구단 수를 입력 해주세요.");
+            if(isNaN(Number(gugudan)))
+            {//gugudan으로 받은 값이 number형태로 바꾼뒤 NaN인지 number인지 확인
+                console.log("숫자가 아닙니다."); //if(1)일 경우 NaN으로 값이 들어온 것이기 때문에 숫자가 아니다를 출력
+            }else
+            {//NaN이아닌 number형태가 들어왔으므로
+                for(i=1;i<10;i++)
+                {//gugudan * 1~9를 하기위해 for문을 선택
+                    document.write(`${gugudan} x ${i} = ${gugudan*i}<br>`)//입력받은값 x 1~9 = 곱한값 (줄 바꿈) 을 출력
+                }
+                break;//구구단을 출력했으니 반복문을 벗어남
+            }
+        }
+    </script>
+</body>
+</html>
